@@ -18,10 +18,15 @@ public class DataLoader implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-//        bookService.insert(new Book("Spring 5 recipes",150.3));
-//        bookService.insert(new Book("Spring Boot 3",450.3));
-//        bookService.insert(new Book("Head First Design Patterns",750.3));
-//        bookService.insert(new Book("Clean Code",150.3));
-//        bookService.insert(new Book("Databases Fundamentals",350.3));
+        bookService.insert(new Book("Spring 5 recipes",150.3));
+        bookService.insert(new Book("Spring Boot 3",450.3));
+        bookService.insert(new Book("Head First Design Patterns",750.3));
+        bookService.insert(new Book("Clean Code",150.3));
+        bookService.insert(new Book("Databases Fundamentals",350.3));
+        bookService.insert(new Book("Spring MVC",150.3));
+        bookService.insert(new Book("Spring Data Jpa",450.3));
+        bookService.insert(new Book("Spring Security",750.3));
+        bookService.insert(new Book("Spring core",150.3));
+        bookService.insert(new Book("Networking Fundamentals",350.3));
     }
 }

@@ -2,6 +2,7 @@ package io.nerd.springredis.book;
 
 import io.nerd.springredis.exception.RecordNotFoundExecution;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,13 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Cacheable(value = "bookCache",key = "#root.methodName")
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
     @Override
+    @Cacheable(value = "bookCache",key = "#root.methodName")
     public Book findById(Long id) {
         return bookRepository.findById(id).orElseThrow(() -> new RecordNotFoundExecution("This Record ID " + id + " Not Found"));
     }
