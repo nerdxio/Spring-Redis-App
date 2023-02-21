@@ -9,10 +9,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.redis.core.RedisHash;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
+@RedisHash("Book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
